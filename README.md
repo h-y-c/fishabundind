@@ -1,14 +1,13 @@
 ---
 title: "fishabundind: Fish Abundance Index"
 author: "Hsiao-Yun Chang, Yong Chen"
-date: "`Sys.Date()`"
-package: "`packageVersion('fishabundind')`"
+date: `Sys.Date()`
+package: `packageVersion('fishabundind')`
 output:
   github_document:
     toc: true
     toc_depth: 3
 fig_width: 7
-bibliography: library.bib
 vignette: >
     %\VignetteEncoding{UTF-8}
     %\usepackage[utf8]{inputenc}
