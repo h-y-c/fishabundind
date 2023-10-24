@@ -109,6 +109,8 @@ To visualize the time series of the initial time of the proposed season:
  plot.initseason(seasonQ)
 
 ```
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/db046bac-2a5f-4523-b68d-53479db27e9e)
+
 
 The estimates can be very useful for examining temporal changes in fish phenology.
 
@@ -150,6 +152,7 @@ To visualize the time series of the annual abundance indices.
  plot.fishai(aiQ)
 
 ```
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/e7b447e9-fa06-4160-812b-e492e4a6c7b8)
 
 Another example of using `fishai` using all data (`SeasonEst=FALSE`) for species X.
 
@@ -176,6 +179,9 @@ To visualize the time series of the annual abundance indices for species X.
  plot.fishai(aiQ)
 
 ```
+
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/f9c710e5-c617-4bbd-8625-3e81ea902166)
+
 
 # 3. Spatiotemporal Distribution
 
@@ -215,6 +221,8 @@ To visualize the spatiotemporal distribution of average weekly density for speci
  plot.fishstd(stdQ)
  
 ```
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/ede2dba8-e6c8-4af3-8f77-072903138a80)
+
 
 Another example of using `fishstd` using all data (`SeasonEst=FALSE`) for species X.
 
@@ -239,6 +247,8 @@ To visualize the spatiotemporal distribution of average weekly density for speci
  plot.fishstd(stdX)
  
 ```
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/c20ca514-a001-46c2-a620-1a207e4c8d26)
+
 
 # Session info
 
