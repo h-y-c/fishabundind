@@ -3,7 +3,7 @@
 fishabundind: Fish Abundance Index
 ================
 Hsiao-Yun Chang, Yong Chen
-`r Sys.Date()`
+2023-10-24
 
 
 # Introduction
