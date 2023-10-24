@@ -249,13 +249,6 @@ To visualize the spatiotemporal distribution of average weekly density for speci
 ![image](https://github.com/h-y-c/fishabundind/assets/90223612/c20ca514-a001-46c2-a620-1a207e4c8d26)
 
 
-# Session info
-
-```{r}
-
-sessionInfo()
-
-```
 
 # References
 
