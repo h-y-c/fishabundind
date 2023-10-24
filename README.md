@@ -1,22 +1,10 @@
----
-title: "fishabundind: Fish Abundance Index"
-author: "Hsiao-Yun Chang, Yong Chen"
-date: `Sys.Date()`
-package: `packageVersion('fishabundind')`
-output:
-  github_document:
-    toc: true
-    toc_depth: 3
-fig_width: 7
-vignette: >
-    %\VignetteEncoding{UTF-8}
-    %\usepackage[utf8]{inputenc}
-    %\VignetteIndexEntry{fishabundind: Fish Abundance Index}
-    %\VignetteEngine{knitr::rmarkdown}
-editor_options: 
-  markdown: 
-    wrap: sentence
----
+
+
+fishabundind: Fish Abundance Index
+================
+Hsiao-Yun Chang, Yong Chen
+`Sys.Date()`
+
 
 # Introduction
 
@@ -26,11 +14,6 @@ Fishery-independent surveys are often the preferred choice for deriving these in
 *fishabundind* offers a set of functions designed for the estimation and visualization of design-based annual fish abundance indices and their spatiotemporal distributions.
 Additionally, it includes a function for determining the initial timing of the proposed season, particularly valuable for early life-stages.
 
-```{r VROOM_CONNECTION_SIZE, eval = TRUE, echo = FALSE}
-
-  Sys.setenv(VROOM_CONNECTION_SIZE='512000')
-
-```
 
 # Installation
 
