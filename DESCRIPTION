@@ -2,10 +2,10 @@ Package: fishabundind
 Title: Fish Abundance Indices
 Version: 1.0-0
 Authors@R: 
-    c(person(given = c("Hsiao-Yun Chang"), family = "Chang", role =
-        c("aut", "cre"), email = "hsiao-yun.chang@stonybrook.edu", comment=c(ORCID="")),
-        person(given = c("Yong"), family = "Chen", role =
-        c("aut", "cre"), comment=c(ORCID="")))
+c(
+    person(given = c("Hsiao-Yun Chang"), family = "Chang", role = c("aut", "cre"), email = "hsiao-yun.chang@stonybrook.edu"),
+    person(given = c("Yong"), family = "Chen", role = c("aut", "cre"))
+    )
 Description: Functions for estimating design-based fish abundance indices. It can be used for fish collected from a fishery-independent survey with a stratified random sampling design.
 Date: Sys.Date()
 License: MIT + file LICENSE 
