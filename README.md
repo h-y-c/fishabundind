@@ -20,9 +20,6 @@ Additionally, it includes a function for determining the initial timing of the p
 
 ```{r getPackageDevel, eval = FALSE}
 
-  if (!requireNamespace('devtools', quietly = TRUE))
-    install.packages('devtools')
-
   devtools::install_github('h-y-c/fishabundind')
 
 ```
