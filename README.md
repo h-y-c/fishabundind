@@ -3,7 +3,7 @@
 fishabundind: Fish Abundance Index
 ================
 Hsiao-Yun Chang, Yong Chen
-`Sys.Date()`
+`r Sys.Date()`
 
 
 # Introduction
