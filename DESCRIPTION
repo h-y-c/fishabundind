@@ -1,8 +1,7 @@
 Package: fishabundind
 Title: Fish Abundance Indices
 Version: 1.0-0
-Authors@R: 
-c(
+Authors@R: c(
     person(given = c("Hsiao-Yun Chang"), family = "Chang", role = c("aut", "cre"), email = "hsiao-yun.chang@stonybrook.edu"),
     person(given = c("Yong"), family = "Chen", role = c("aut", "cre"))
     )

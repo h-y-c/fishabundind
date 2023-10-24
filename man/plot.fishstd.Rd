@@ -34,8 +34,8 @@ Plot spatiotemporal distribution for each region and each year
               N_individual="nind",
               SeasonEst=TRUE,first_thr=0.05,durationEst=7
  )
- plot.fishstd(stdQ)
- 
+ plot.fishstd(df=stdQ,legend.title="Standardized Density",plot.title="SpeciesQ")
+
  stdX<-fishstd(dataset=fishX,Year="yr",
               Week="wk",
               RegionName="regname",
@@ -46,8 +46,8 @@ Plot spatiotemporal distribution for each region and each year
               N_individual="nind",
               SeasonEst=FALSE
  )
- plot.fishstd(stdX)
- 
+ plot.fishstd(df=stdX,legend.title="Standardized Density",plot.title="SpeciesX")
+
 }
- 
+
 }
