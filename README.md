@@ -133,7 +133,6 @@ When `SeasonEst=FALSE`, data of all weeks will be used.
             VolumeSample="volsamp",
             N_individual="nind",
             SeasonEst=TRUE,first_thr=0.05,durationEst=7)
- aiQ
 
 ```
 
@@ -209,7 +208,7 @@ The `fishstd` returns a dataframe which includes averaged weekly density for eac
 
 ```{r message = FALSE}
 
- print(stdQ)
+ stdQ
 
 ```
 
@@ -218,7 +217,7 @@ To visualize the spatiotemporal distribution of average weekly density for speci
 ```{r message = FALSE}
 
  library(colorRamps)
- plot.fishstd(stdQ)
+ plot.fishstd(df=stdQ,legend.title="Standardized Density",plot.title="SpeciesQ")
  
 ```
 ![image](https://github.com/h-y-c/fishabundind/assets/90223612/ede2dba8-e6c8-4af3-8f77-072903138a80)
@@ -244,7 +243,7 @@ To visualize the spatiotemporal distribution of average weekly density for speci
 
 ```{r message = FALSE}
 
- plot.fishstd(stdX)
+ plot.fishstd(df=stdX,legend.title="Standardized Density",plot.title="SpeciesX")
  
 ```
 ![image](https://github.com/h-y-c/fishabundind/assets/90223612/c20ca514-a001-46c2-a620-1a207e4c8d26)
