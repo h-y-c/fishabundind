@@ -1,15 +1,15 @@
 #' plot.fishai function
 #' Plot annual abundance index
-#' 
+#'
 #' @param df A dataset contains a variable of year and a variable of abundanc indices.
 #' @param Year A variable of Year of data collection.
 #' @param AbundIndex A variable of annual abundance indices.
-#'   
+#'
 #' @import dplyr
 #' @import ggplot2
-#'  
+#'
 #' @return This function returns a graph of the annual abundance indices time series.
-#'  
+#'
 #' @export
 #' @examples
 #' \dontrun{
@@ -22,8 +22,8 @@
 #'             VolumeSample="volsamp",
 #'             N_individual="nind",
 #'             SeasonEst=TRUE,first_thr=0.05,durationEst=7)
-#'  plot.fishai(aiQ)
-#'  
+#'  plot.fishai(aiQ,Year=Year,AbundIndex=AbundIndex)
+#'
 #'  aiX<-fishai(dataset=fishX,Year="yr",
 #'             Week="wk",
 #'             RegionName="regname",
@@ -33,10 +33,10 @@
 #'             VolumeSample="volsamp",
 #'             N_individual="nind",
 #'             SeasonEst=FALSE)
-#'  plot.fishai(aiX)
-#'  
+#'  plot.fishai(aiX,Year=Year,AbundIndex=AbundIndex)
+#'
 #' }
-#'  
+#'
 
 plot.fishai<-function(df,Year=NULL,AbundIndex=NULL){
   fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)

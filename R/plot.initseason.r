@@ -1,15 +1,15 @@
 #' plot.initseason function
 #' Plot initial weeks
-#' 
+#'
 #' @param df A dataset contains a variable of year and a variable of initial week.
 #' @param Year A variable of Year of data collection.
 #' @param first_wk A variable of estimated first week of the season.
-#'   
+#'
 #' @import dplyr
 #' @import ggplot2
-#'  
+#'
 #' @return This function returns a graph of the initial week time series.
-#'  
+#'
 #' @export
 #' @examples
 #' \dontrun{
@@ -23,8 +23,8 @@
 #'                                 N_individual="nind",
 #'                                 first_thr=0.05,durationEst=7
 #'  )
-#'  plot.initseason(seasonQ)
-#'  
+#'  plot.initseason(seasonQ,Year=Year,first_wk=first_wk)
+#'
 #'  }
 
 plot.initseason<-function(df,Year=NULL,first_wk=NULL){
