@@ -17,7 +17,7 @@ test_that("plot.fishstd() is performing correctly", {
                 N_individual="nind",
                 SeasonEst=TRUE,first_thr=0.05,durationEst=7)
   )
-  
+  graphics.off(); par("mar"); par(mar=c(1,1,1,1))
   expect_silent(plot.fishstd(aiQ))
   
   expect_warning(
@@ -31,7 +31,7 @@ test_that("plot.fishstd() is performing correctly", {
                 N_individual="nind",
                 SeasonEst=FALSE)
   )
-  
+  graphics.off(); par("mar"); par(mar=c(1,1,1,1))
   expect_silent(plot.fishstd(aiX))
   
 })
