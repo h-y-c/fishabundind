@@ -1,20 +1,21 @@
+
 Package: fishabundind
-Title: Fish Abundance Indices
 Version: 1.0-0
-Authors@R: c(
-    person(given = c("Hsiao-Yun Chang"), family = "Chang", role = c("aut", "cre"), email = "hsiao-yun.chang@stonybrook.edu"),
-    person(given = c("Yong"), family = "Chen", role = c("aut", "cre"))
-    )
+Date: 2023-10-25
+Title: Fish Abundance Indices
+Authors@R: c(person("Hsiao-Yun Chang", "Developer", role = c("aut", "cre"),
+                     email = "hsiao-yun.chang@stonybrook.edu"),
+              person("Yong Chen", "Developer", role = "aut")
+              )
+Author: Chang Developer [aut, cre],
+  Chen Developer [aut]
+Maintainer: Chang Developer <hsiao-yun.chang@stonybrook.edu>
+Depends: R (>= 3.1.0)
+Suggests: knitr, rmarkdown
 Description: Functions for estimating design-based fish abundance indices. It can be used for fish collected from a fishery-independent survey with a stratified random sampling design.
-Date: Sys.Date()
 License: MIT + file LICENSE 
 Encoding: UTF-8
 LazyData: TRUE
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Suggests: 
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
-Depends: 
-    R (>= 2.10)
+
