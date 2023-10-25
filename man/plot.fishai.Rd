@@ -32,8 +32,8 @@ Plot annual abundance index
             VolumeSample="volsamp",
             N_individual="nind",
             SeasonEst=TRUE,first_thr=0.05,durationEst=7)
- plot.fishai(aiQ)
- 
+ plot.fishai(aiQ,Year=Year,AbundIndex=AbundIndex)
+
  aiX<-fishai(dataset=fishX,Year="yr",
             Week="wk",
             RegionName="regname",
@@ -43,8 +43,8 @@ Plot annual abundance index
             VolumeSample="volsamp",
             N_individual="nind",
             SeasonEst=FALSE)
- plot.fishai(aiX)
- 
+ plot.fishai(aiX,Year=Year,AbundIndex=AbundIndex)
+
 }
- 
+
 }

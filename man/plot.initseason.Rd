@@ -33,7 +33,7 @@ Plot initial weeks
                                 N_individual="nind",
                                 first_thr=0.05,durationEst=7
  )
- plot.initseason(seasonQ)
- 
+ plot.initseason(seasonQ,Year=Year,first_wk=first_wk)
+
  }
 }
