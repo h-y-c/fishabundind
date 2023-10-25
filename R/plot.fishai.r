@@ -38,7 +38,7 @@
 #' }
 #'
 
-plot.fishai<-function(df,Year=NULL,AbundIndex=NULL,...){
+plot.fishai<-function(df, ... ,Year=NULL,AbundIndex=NULL){
   fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)
   ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
     geom_line()+

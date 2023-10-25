@@ -5,7 +5,7 @@
 \title{plot.fishai function
 Plot annual abundance index}
 \usage{
-\method{plot}{fishai}(df, Year = NULL, AbundIndex = NULL)
+\method{plot}{fishai}(df, Year = NULL, AbundIndex = NULL, ...)
 }
 \arguments{
 \item{df}{A dataset contains a variable of year and a variable of abundanc indices.}
