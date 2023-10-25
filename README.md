@@ -217,6 +217,7 @@ To visualize the spatiotemporal distribution of average weekly density for speci
 ```{r message = FALSE}
 
  library(colorRamps)
+ # NOTE This can return "figure margins too large" error.
  plot.fishstd(df=stdQ,legend.title="Standardized Density",plot.title="SpeciesQ")
  
 ```
@@ -243,6 +244,7 @@ To visualize the spatiotemporal distribution of average weekly density for speci
 
 ```{r message = FALSE}
 
+ # NOTE This can return "figure margins too large" error.
  plot.fishstd(df=stdX,legend.title="Standardized Density",plot.title="SpeciesX")
  
 ```

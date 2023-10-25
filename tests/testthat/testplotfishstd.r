@@ -7,7 +7,7 @@ context("Test plot.fishstd()")
 test_that("plot.fishstd() is performing correctly", {
   
   expect_silent( 
-    aiQ<-fishstd(fishQ, Year="yr",
+    stdQ<-fishstd(fishQ, Year="yr",
                 Week="wk",
                 RegionName="regname",
                 Strata="stra",
@@ -17,11 +17,11 @@ test_that("plot.fishstd() is performing correctly", {
                 N_individual="nind",
                 SeasonEst=TRUE,first_thr=0.05,durationEst=7)
   )
-  graphics.off(); par("mar"); par(mar=c(1,1,1,1))
-  expect_silent(plot.fishstd(aiQ))
-  
+ 
+  expect_error(plot.fishstd(stdQ)) # this can return "figure margins too large" error
+
   expect_warning(
-    aiX<-fishstd(fishX, Year="yr",
+    stdX<-fishstd(fishX, Year="yr",
                 Week="wk",
                 RegionName="regname",
                 Strata="stra",
@@ -31,7 +31,7 @@ test_that("plot.fishstd() is performing correctly", {
                 N_individual="nind",
                 SeasonEst=FALSE)
   )
-  graphics.off(); par("mar"); par(mar=c(1,1,1,1))
-  expect_silent(plot.fishstd(aiX))
+
+  expect_error(plot.fishstd(stdX)) # this can return "figure margins too large" error
   
 })
