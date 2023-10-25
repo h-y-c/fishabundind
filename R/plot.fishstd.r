@@ -6,7 +6,8 @@
 #' @param legend.title Title for the color key.
 #' @param plot.title Title for the graph.
 #'
-#' @import gplots, colorRamps
+#' @import gplots
+#' @import colorRamps
 #'
 #' @return This function returns a heatmap showing spatiotemporal distribution over regions and years.
 #'
