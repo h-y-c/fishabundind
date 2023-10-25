@@ -1,7 +1,27 @@
 #' plot.fishai function
 #' Plot annual abundance index
 #'
+#' This the generic melt function. See the following functions
 #' @param df A dataset contains a variable of year and a variable of abundanc indices.
+#' @param ... further arguments passed to or from other methods.
+#' @param Year A variable of Year of data collection.
+#' @param AbundIndex A variable of annual abundance indices.
+#'
+#' @import dplyr
+#' @import ggplot2
+#'
+#'
+#' @export
+
+plot.fishai<-function(df, ... ,Year=NULL,AbundIndex=NULL){
+  UseMethod("plot.fishai", df)
+}
+
+#' plot.fishai function
+#' Plot annual abundance index
+#'
+#' @param df A dataset contains a variable of year and a variable of abundanc indices.
+#' @param ... further arguments passed to or from other methods.
 #' @param Year A variable of Year of data collection.
 #' @param AbundIndex A variable of annual abundance indices.
 #'
@@ -10,6 +30,7 @@
 #'
 #' @return This function returns a graph of the annual abundance indices time series.
 #'
+#' @family plot.fishai methods
 #' @export
 #' @examples
 #' \dontrun{
@@ -38,7 +59,7 @@
 #' }
 #'
 
-plot.fishai<-function(df, ... ,Year=NULL,AbundIndex=NULL){
+plot.fishai.default<-function(df, ... ,Year=NULL,AbundIndex=NULL){
   fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)
   ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
     geom_line()+
@@ -47,4 +68,14 @@ plot.fishai<-function(df, ... ,Year=NULL,AbundIndex=NULL){
     ylab("Abundance Index") +
     xlab("Year")
 }
+
+# plot.fishai<-function(df, ... ,Year=NULL,AbundIndex=NULL){
+#   fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)
+#   ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
+#     geom_line()+
+#     geom_point()+
+#     theme_bw()  +
+#     ylab("Abundance Index") +
+#     xlab("Year")
+# }
 
