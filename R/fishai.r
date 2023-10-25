@@ -1,48 +1,48 @@
 #' fishai function
 #' Estimate annual abundance index
-#' 
+#'
 #' @param dataset A dataset contains the input data.
 #' This dataset must include the following variables.
 #' @param Year A variable of Year of data collection.
 #' @param Week A variable of calender week of data collection.
 #' @param RegionName A variable of names of regions where data were collected.
-#' @param Strata A variable of strata within the corresponding \code{RegionName} where data were collected. 
-#' @param StrataVolume A variable of volume of the corresponding \code{Strata} where data were collected. 
-#'  Depending on the sampling design, it could be area of a strata. 
-#' @param RegionVolume A variable of volume of the corresponding region where data were collected. 
-#'  Depending on the sampling design, it could be area of a region. 
-#' @param VolumeSample A variable of volume of water sampled. 
-#'  Depending on the sampling design, it could be time of tow duration or area swept. 
-#' @param N_individual A variable of number of individual sampled. 
-#' @param SeasonEst Logical. Should seasonality be considered? Some speices or some life stages  
-#'  would have prominent peak season, especially for eggs and larvae. 
-#'  If \code{TRUE}, \code{first_thr} and \code{durationEst} must be specified. 
-#'  If \code{FALSE}, all data will be used. 
-#'  The default value is \code{TRUE}. 
-#' @param first_thr A numeric value in between 0 and 1.   
-#'  It is used to determine the first week of the year in which 
-#'  the cumulative weekly density estimates surpass \code{first_thr}*100% of 
+#' @param Strata A variable of strata within the corresponding \code{RegionName} where data were collected.
+#' @param StrataVolume A variable of volume of the corresponding \code{Strata} where data were collected.
+#'  Depending on the sampling design, it could be area of a strata.
+#' @param RegionVolume A variable of volume of the corresponding region where data were collected.
+#'  Depending on the sampling design, it could be area of a region.
+#' @param VolumeSample A variable of volume of water sampled.
+#'  Depending on the sampling design, it could be time of tow duration or area swept.
+#' @param N_individual A variable of number of individual sampled.
+#' @param SeasonEst Logical. Should seasonality be considered? Some speices or some life stages
+#'  would have prominent peak season, especially for eggs and larvae.
+#'  If \code{TRUE}, \code{first_thr} and \code{durationEst} must be specified.
+#'  If \code{FALSE}, all data will be used.
+#'  The default value is \code{TRUE}.
+#' @param first_thr A numeric value in between 0 and 1.
+#'  It is used to determine the first week of the year in which
+#'  the cumulative weekly density estimates surpass \code{first_thr}*100% of
 #'  the total densities observed across all weeks of sampling.
-#' @param durationEst Integer (>0). 
-#'  The estimated duration of weeks the season will last. 
-#'  For example, if the season is estimated to end 8 weeks after 
+#' @param durationEst Integer (>0).
+#'  The estimated duration of weeks the season will last.
+#'  For example, if the season is estimated to end 8 weeks after
 #'  the estimated first week (see \code{first_thr}), then the input should be 8.
-#'   
+#'
 #' @import dplyr
-#'  
+#'
 #' @return This function returns a dataframe which includes a variable of year and
 #'  a variable of annual abundance indeices
-#' 
-#' @details The data are assumed collected from a fishery-independent survey following 
-#'  a stratified random sampling design with i regions within the sampling area and 
-#'  s strata within a given region. The survey was conducted over week for each year. 
+#'
+#' @details The data are assumed collected from a fishery-independent survey following
+#'  a stratified random sampling design with i regions within the sampling area and
+#'  s strata within a given region. The survey was conducted over week for each year.
 #'  The design-based annual abundance index for each year is estimated using the average density:
 #'  \code{AbundInd} = \deqn{\sum{\frac{\sum{\sum{\code{StrataVolume}*\frac{\sum{\code{N_individual}}}{\sum{\code{VolumeSample}}}}}}{\sum{\code{RegionVolume}}}}}
-#'  
-#' @references Chang, H.-Y., Sun, M., Rokosz, K., and Chen, Y.. (2023) 
-#'  Evaluating effects of changing sampling protocol for a long-term Ichthyoplankton monitoring program. 
+#'
+#' @references Chang, H.-Y., Sun, M., Rokosz, K., and Chen, Y.. (2023)
+#'  Evaluating effects of changing sampling protocol for a long-term Ichthyoplankton monitoring program.
 #'  Frontiers in Marine Science. DOI: 10.3389/fmars.2023.1237549
-#'  
+#'
 #' @export
 #' @examples
 #' \dontrun{
@@ -56,7 +56,7 @@
 #'             N_individual="nind",
 #'             SeasonEst=TRUE,first_thr=0.05,durationEst=7)
 #'  aiQ
-#'  
+#'
 #'  aiX<-fishai(dataset=fishX,Year="yr",
 #'             Week="wk",
 #'             RegionName="regname",
@@ -67,9 +67,9 @@
 #'             N_individual="nind",
 #'             SeasonEst=FALSE)
 #'  aiX
-#'  
+#'
 #' }
-#'  
+#'
 
 fishai<-function(dataset,
                  Year,Week,RegionName,Strata,
@@ -77,14 +77,14 @@ fishai<-function(dataset,
                  SeasonEst=TRUE,first_thr=NULL,durationEst=NULL){
 
   if(!is.data.frame(dataset)){stop("dataset is not a data.frame object",call.=FALSE)}
-  
+
   SeasonEst<-SeasonEst
   first_thr<-first_thr
   durationEst<-durationEst
 
   suppressWarnings(
     suppressMessages(
-      
+
       fishdat<-dataset%>%
         dplyr::rename(Year=Year,
                       Week=Week,
@@ -98,7 +98,7 @@ fishai<-function(dataset,
 
     )# suppressMessages
   )#suppressWarnings
-  
+
 
   if(!is.logical(SeasonEst)){stop("SeasonEst should be logical (TRUE or FALSE)",call.=FALSE)}
   if(SeasonEst){
@@ -114,7 +114,7 @@ fishai<-function(dataset,
 
   suppressWarnings(
     suppressMessages(
-      
+
       vol_sum<-fishdat%>%
         dplyr::select(Year,
                       RegionName,
@@ -123,17 +123,18 @@ fishai<-function(dataset,
         group_by(Year)%>%
         summarise(VolSum=sum(RegionVolume,na.rm=TRUE))%>%
         ungroup()%>%as.data.frame()
-      
-      
+
+
     )# suppressMessages
   )#suppressWarnings
-  
-  
+
+
   if(SeasonEst){
+
 
     suppressWarnings(
       suppressMessages(
-        
+
         first_wk_df<-fishdat%>%
           group_by(Year,Week)%>%
           summarise(
@@ -161,10 +162,10 @@ fishai<-function(dataset,
           summarise(
             first_wk=min(Week[which(den_cumsum>=thr_sum)])
           )%>%ungroup()%>%as.data.frame()
-        
+
       )# suppressMessages
     )#suppressWarnings
-    
+
 
     foo<-wks_df<-list()
     for(i in 1:length(first_wk_df$Year)){
@@ -202,7 +203,7 @@ fishai<-function(dataset,
 
     )# suppressMessages
   )#suppressWarnings
-  
+
   return(yr_abund_df)
 
 }# end of funnction

@@ -1,7 +1,7 @@
-#' plot.fishai function
+#' plotfishai function
 #' Plot annual abundance index#'
 #'
-#' @name plot.fishai
+#' @name plotfishai
 #'
 #' @param df A dataset contains a variable of year and a variable of abundance indices.
 #' @param ... arguments passed to other methods
@@ -10,8 +10,8 @@
 #' @import ggplot2
 #'
 #' @export
-plot <- function(df, ...) {
-  UseMethod("plot")
+plotfishai <- function(df, ...) {
+  UseMethod("plotfishai")
 }
 
 #' @param Year A variable of Year of data collection.
@@ -19,7 +19,7 @@ plot <- function(df, ...) {
 #'
 #' @return This function returns a graph of the abundance indices time series.
 #'
-#' @rdname plot.fishai
+#' @rdname plotfishai
 #' @export
 #'
 #' @examples
@@ -33,7 +33,7 @@ plot <- function(df, ...) {
 #'             VolumeSample="volsamp",
 #'             N_individual="nind",
 #'             SeasonEst=TRUE,first_thr=0.05,durationEst=7)
-#'  plot(aiQ)
+#'  plotfishai(aiQ)
 #'
 #'  aiX<-fishai(dataset=fishX,Year="yr",
 #'             Week="wk",
@@ -44,18 +44,20 @@ plot <- function(df, ...) {
 #'             VolumeSample="volsamp",
 #'             N_individual="nind",
 #'             SeasonEst=FALSE)
-#'  plot(aiX,Year=Year,AbundIndex=AbundIndex)
+#'  plotfishai(aiX,Year=Year,AbundIndex=AbundIndex)
 #'
 #' }
 #'
-plot.fishai<-function(df, ... ,Year=NULL,AbundIndex=NULL){
+plotfishai.default<-function(df, ... ,Year=NULL,AbundIndex=NULL){
   fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)
-  ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
+  pai<-ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
     geom_line()+
     geom_point()+
     theme_bw()  +
     ylab("Abundance Index") +
     xlab("Year")
+  class(pai)<-"plotfishai"
+  return(pai)
 }
 
 

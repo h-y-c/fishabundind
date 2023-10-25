@@ -86,7 +86,7 @@ The design-based annual abundance index for each year is estimated using the ave
             N_individual="nind",
             SeasonEst=TRUE,first_thr=0.05,durationEst=7)
  aiQ
- 
+
  aiX<-fishai(dataset=fishX,Year="yr",
             Week="wk",
             RegionName="regname",
@@ -97,9 +97,9 @@ The design-based annual abundance index for each year is estimated using the ave
             N_individual="nind",
             SeasonEst=FALSE)
  aiX
- 
+
 }
- 
+
 }
 \references{
 Chang, H.-Y., Sun, M., Rokosz, K., and Chen, Y.. (2023)

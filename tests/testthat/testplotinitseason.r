@@ -1,8 +1,8 @@
 
 
-context("Test plot.initseason()")
+context("Test plotinitseason()")
 
-test_that("plot.initseason() is performing correctly", {
+test_that("plotinitseason() is performing correctly", {
   
   expect_silent( 
     seasonQ<-fishinitseasonEst(fishQ, Year="yr",
@@ -16,7 +16,7 @@ test_that("plot.initseason() is performing correctly", {
                  first_thr=0.05,durationEst=7)
   )
   
-  expect_silent(plot.initseason(seasonQ))
+  expect_silent(plotinitseason(seasonQ))
   
   
 })

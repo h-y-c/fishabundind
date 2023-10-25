@@ -1,8 +1,8 @@
 
 
-context("Test plot.fishai()")
+context("Test plotfishai()")
 
-test_that("plot.fishai() is performing correctly", {
+test_that("plotfishai() is performing correctly", {
   
   expect_silent( 
     aiQ<-fishai(fishQ, Year="yr",
@@ -16,7 +16,7 @@ test_that("plot.fishai() is performing correctly", {
                 SeasonEst=TRUE,first_thr=0.05,durationEst=7)
   )
   
-  expect_silent( plot.fishai(aiQ) )
+  expect_silent(plotfishai(aiQ))
   
   expect_warning(
       aiX<-fishai(fishX, Year="yr",
@@ -30,7 +30,7 @@ test_that("plot.fishai() is performing correctly", {
               SeasonEst=FALSE)
   )
 
-  expect_silent(plot.fishai(aiX))
+  expect_silent(plotfishai(aiX))
 
 })
 

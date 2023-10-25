@@ -1,8 +1,8 @@
 
 
-context("Test plot.fishstd()")
+context("Test plotfishstd()")
 
-test_that("plot.fishstd() is performing correctly", {
+test_that("plotfishstd() is performing correctly", {
   
   expect_silent( 
     stdQ<-fishstd(fishQ, Year="yr",
@@ -16,7 +16,7 @@ test_that("plot.fishstd() is performing correctly", {
                 SeasonEst=TRUE,first_thr=0.05,durationEst=7)
   )
  
-  expect_error(plot.fishstd(stdQ)) # this can return "figure margins too large" error
+  expect_error(plotfishstd(stdQ)) # this can return "figure margins too large" error
 
   expect_warning(
     stdX<-fishstd(fishX, Year="yr",
@@ -30,6 +30,6 @@ test_that("plot.fishstd() is performing correctly", {
                 SeasonEst=FALSE)
   )
 
-  expect_error(plot.fishstd(stdX)) # this can return "figure margins too large" error
+  expect_error(plotfishstd(stdX)) # this can return "figure margins too large" error
   
 })
