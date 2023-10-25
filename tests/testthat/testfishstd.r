@@ -1,8 +1,5 @@
 
 
-
-library(fishabundind)
-
 context("Test fishstd()")
 
 test_that("fishstd() is performing correctly", {

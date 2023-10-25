@@ -1,8 +1,5 @@
 
 
-
-library(fishabundind)
-
 context("Test fishinitseasonEst()")
 
 test_that("fishinitseasonEst() is performing correctly", {

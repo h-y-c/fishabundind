@@ -1,9 +1,5 @@
 
 
-
-
-library(fishabundind)
-
 context("Test plot.fishai()")
 
 test_that("plot.fishai() is performing correctly", {

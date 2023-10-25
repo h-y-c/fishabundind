@@ -1,7 +1,5 @@
 
 
-library(fishabundind)
-
 context("Test plot.initseason()")
 
 test_that("plot.initseason() is performing correctly", {

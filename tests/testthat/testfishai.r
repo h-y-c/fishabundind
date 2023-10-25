@@ -1,8 +1,5 @@
 
 
-
-library(fishabundind)
-
 context("Test fishai()")
 
 test_that("fishai() is performing correctly", {
