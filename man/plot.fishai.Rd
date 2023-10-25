@@ -2,20 +2,54 @@
 % Please edit documentation in R/plot.fishai.r
 \name{plot.fishai}
 \alias{plot.fishai}
+\alias{plot}
 \title{plot.fishai function
-Plot annual abundance index}
+Plot annual abundance index#'}
 \usage{
-plot.fishai(df, ..., Year = NULL, AbundIndex = NULL)
+plot(df, ...)
+
+\method{plot}{fishai}(df, ..., Year = NULL, AbundIndex = NULL)
 }
 \arguments{
-\item{df}{A dataset contains a variable of year and a variable of abundanc indices.}
+\item{df}{A dataset contains a variable of year and a variable of abundance indices.}
 
-\item{...}{further arguments passed to or from other methods.}
+\item{...}{arguments passed to other methods}
 
 \item{Year}{A variable of Year of data collection.}
 
 \item{AbundIndex}{A variable of annual abundance indices.}
 }
+\value{
+This function returns a graph of the abundance indices time series.
+}
 \description{
-This the generic melt function. See the following functions
+plot.fishai function
+Plot annual abundance index#'
+}
+\examples{
+\dontrun{
+ aiQ<-fishai(dataset=fishQ,Year="yr",
+            Week="wk",
+            RegionName="regname",
+            Strata="stra",
+            StrataVolume="stravol",
+            RegionVolume="regvol",
+            VolumeSample="volsamp",
+            N_individual="nind",
+            SeasonEst=TRUE,first_thr=0.05,durationEst=7)
+ plot(aiQ)
+
+ aiX<-fishai(dataset=fishX,Year="yr",
+            Week="wk",
+            RegionName="regname",
+            Strata="stra",
+            StrataVolume="stravol",
+            RegionVolume="regvol",
+            VolumeSample="volsamp",
+            N_individual="nind",
+            SeasonEst=FALSE)
+ plot(aiX,Year=Year,AbundIndex=AbundIndex)
+
+}
+
 }
