@@ -17,6 +17,8 @@ A data frame with columns:
 \item{volsamp}{Volume of water sampled of a tow.}
 \item{nind}{Number of individuals (fish) sampled of a tow.}
 \item{spe}{Species name.}
+
+}
 }
 \usage{
 fishQ
