@@ -106,7 +106,7 @@ To visualize the time series of the initial time of the proposed season:
 
 ```{r message = FALSE}
 
- plot.initseason(seasonQ)
+ plotinitseason(seasonQ)
 
 ```
 ![image](https://github.com/h-y-c/fishabundind/assets/90223612/db046bac-2a5f-4523-b68d-53479db27e9e)
@@ -148,7 +148,7 @@ To visualize the time series of the annual abundance indices.
 
 ```{r message = FALSE}
 
- plot.fishai(aiQ)
+ plotfishai(aiQ)
 
 ```
 ![image](https://github.com/h-y-c/fishabundind/assets/90223612/e7b447e9-fa06-4160-812b-e492e4a6c7b8)
@@ -175,7 +175,7 @@ To visualize the time series of the annual abundance indices for species X.
 
 ```{r message = FALSE}
 
- plot.fishai(aiQ)
+ plotfishai(aiQ)
 
 ```
 
@@ -218,7 +218,7 @@ To visualize the spatiotemporal distribution of average weekly density for speci
 
  library(colorRamps)
  # NOTE This can return "figure margins too large" error.
- plot.fishstd(df=stdQ,legend.title="Standardized Density",plot.title="SpeciesQ")
+ plotfishstd(df=stdQ,legend.title="Standardized Density",plot.title="SpeciesQ")
  
 ```
 ![image](https://github.com/h-y-c/fishabundind/assets/90223612/ede2dba8-e6c8-4af3-8f77-072903138a80)
@@ -245,7 +245,7 @@ To visualize the spatiotemporal distribution of average weekly density for speci
 ```{r message = FALSE}
 
  # NOTE This can return "figure margins too large" error.
- plot.fishstd(df=stdX,legend.title="Standardized Density",plot.title="SpeciesX")
+ plotfishstd(df=stdX,legend.title="Standardized Density",plot.title="SpeciesX")
  
 ```
 ![image](https://github.com/h-y-c/fishabundind/assets/90223612/c20ca514-a001-46c2-a620-1a207e4c8d26)
