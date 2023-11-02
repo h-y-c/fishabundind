@@ -135,7 +135,7 @@ When `SeasonEst=FALSE`, data of all weeks will be used.
 
 ```
 
-The `fishai` function returns a dataframe including a variable of year and a variable of annual abundance indices.
+The `fishai` function returns a dataframe including a variable of year, a variable of annual abundance indices, and a variable of variance.
 
 ```{r message = FALSE}
 
@@ -144,6 +144,7 @@ The `fishai` function returns a dataframe including a variable of year and a var
 ```
 
 To visualize the time series of the annual abundance indices.
+The shade denotes the standard error.
 
 ```{r message = FALSE}
 
@@ -171,14 +172,16 @@ Another example of using `fishai` using all data (`SeasonEst=FALSE`) for species
 Note that when `SeasonEst=FALSE`, `first_thr` and `durationEst` are not needed.
 
 To visualize the time series of the annual abundance indices for species X.
+Use se=FALSE to turn off the standard error (default is TRUE).
 
 ```{r message = FALSE}
 
- plotfishai(aiX)
+ plotfishai(aiX,se=FALSE)
 
 ```
 
-![image](https://github.com/h-y-c/fishabundind/assets/90223612/24da9438-35d3-48ad-8c91-3a5c95b9d589)
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/63bd7df0-33a7-4846-9446-5c7fdca8cc25)
+
 
 # 3. Spatiotemporal Distribution
 
