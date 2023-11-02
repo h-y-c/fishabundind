@@ -109,8 +109,7 @@ To visualize the time series of the initial time of the proposed season:
  plotinitseason(seasonQ)
 
 ```
-![image](https://github.com/h-y-c/fishabundind/assets/90223612/db046bac-2a5f-4523-b68d-53479db27e9e)
-
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/6406b02d-595c-44ec-8de6-e08d3abcf3cc)
 
 The estimates can be very useful for examining temporal changes in fish phenology.
 
@@ -136,7 +135,7 @@ When `SeasonEst=FALSE`, data of all weeks will be used.
 
 ```
 
-The `fishai` function returns a dataframe including a variable of year and a variable of annual abundance indices.
+The `fishai` function returns a dataframe including a variable of year, a variable of annual abundance indices, and a variable of variance.
 
 ```{r message = FALSE}
 
@@ -145,13 +144,14 @@ The `fishai` function returns a dataframe including a variable of year and a var
 ```
 
 To visualize the time series of the annual abundance indices.
+The shade denotes the standard error.
 
 ```{r message = FALSE}
 
  plotfishai(aiQ)
 
 ```
-![image](https://github.com/h-y-c/fishabundind/assets/90223612/e7b447e9-fa06-4160-812b-e492e4a6c7b8)
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/6be146a9-3078-404f-86c0-8124afce4482)
 
 Another example of using `fishai` using all data (`SeasonEst=FALSE`) for species X.
 
@@ -172,14 +172,15 @@ Another example of using `fishai` using all data (`SeasonEst=FALSE`) for species
 Note that when `SeasonEst=FALSE`, `first_thr` and `durationEst` are not needed.
 
 To visualize the time series of the annual abundance indices for species X.
+Use `se=FALSE` to turn off the standard error (default is TRUE).
 
 ```{r message = FALSE}
 
- plotfishai(aiQ)
+ plotfishai(aiX,se=FALSE)
 
 ```
 
-![image](https://github.com/h-y-c/fishabundind/assets/90223612/f9c710e5-c617-4bbd-8625-3e81ea902166)
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/63bd7df0-33a7-4846-9446-5c7fdca8cc25)
 
 
 # 3. Spatiotemporal Distribution
