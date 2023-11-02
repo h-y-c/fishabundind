@@ -55,25 +55,27 @@ plotfishai.default<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
   if(se){
     fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)%>%
       mutate(serr=sqrt(var))
-      pai<-ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
+      # pai<-
+        ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
         geom_line()+
         geom_point()+
         geom_ribbon(aes(ymin = AbundIndex-serr, ymax = AbundIndex+serr), alpha = 0.3)
       theme_bw()  +
         ylab("Abundance Index") +
         xlab("Year")
-      class(pai)<-"plotfishai"
-      return(pai)
+      # class(pai)<-"plotfishai"
+      # return(pai)
   }else{
     fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)
-    pai<-ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
+    #pai<-
+      ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
       geom_line()+
       geom_point()+
       theme_bw()  +
       ylab("Abundance Index") +
       xlab("Year")
-    class(pai)<-"plotfishai"
-    return(pai)
+    # class(pai)<-"plotfishai"
+    # return(pai)
   }
 
 }
