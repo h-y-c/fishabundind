@@ -172,7 +172,7 @@ Another example of using `fishai` using all data (`SeasonEst=FALSE`) for species
 Note that when `SeasonEst=FALSE`, `first_thr` and `durationEst` are not needed.
 
 To visualize the time series of the annual abundance indices for species X.
-Use se=FALSE to turn off the standard error (default is TRUE).
+Use `se=FALSE` to turn off the standard error (default is TRUE).
 
 ```{r message = FALSE}
 
