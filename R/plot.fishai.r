@@ -49,7 +49,7 @@ plotfishai<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
   if(se){
     fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)%>%
       mutate(serr=sqrt(var))
-    # pai<-
+    pai<-
     ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
       geom_line()+
       geom_point()+
@@ -58,10 +58,10 @@ plotfishai<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
       ylab("Abundance Index") +
       xlab("Year")
     # class(pai)<-"plotfishai"
-    # return(pai)
+    return(pai)
   }else{
     fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)
-    # pai<-
+    pai<-
     ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
       geom_line()+
       geom_point()+
@@ -69,7 +69,7 @@ plotfishai<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
       ylab("Abundance Index") +
       xlab("Year")
     # class(pai)<-"plotfishai"
-    # return(pai)
+    return(pai)
   }
 
 }
