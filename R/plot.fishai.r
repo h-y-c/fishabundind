@@ -9,6 +9,11 @@
 #' @import dplyr
 #' @import ggplot2
 #'
+#' @export
+plotfishai <- function(df, ...) {
+  UseMethod("plotfishai")
+}
+
 #' @param Year A variable of Year of data collection.
 #' @param AbundIndex A variable of annual abundance indices.
 #' @param se Logical. Standard error will be plotted out if TRUE.
@@ -45,35 +50,39 @@
 #'
 #' }
 #'
-plotfishai<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
+plotfishai.default<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
   if(!is.logical(se)){stop("se should be logical (TRUE or FALSE)",call.=FALSE)}
   if(se){
     fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)%>%
       mutate(serr=sqrt(var))
-      # pai<-
-        ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
-        geom_line()+
-        geom_point()+
-        geom_ribbon(aes(ymin = AbundIndex-serr, ymax = AbundIndex+serr), alpha = 0.3)
-      theme_bw()  +
-        ylab("Abundance Index") +
-        xlab("Year")
-      # class(pai)<-"plotfishai"
-      # return(pai)
+    pai<-
+    ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
+      geom_line()+
+      geom_point()+
+      geom_ribbon(aes(ymin = AbundIndex-serr, ymax = AbundIndex+serr), alpha = 0.3)
+    theme_bw()  +
+      ylab("Abundance Index") +
+      xlab("Year")
+    class(pai)<-"plotfishai"
+    return(pai)
   }else{
     fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)
-    #pai<-
-      ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
+    pai<-
+    ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
       geom_line()+
       geom_point()+
       theme_bw()  +
       ylab("Abundance Index") +
       xlab("Year")
-    # class(pai)<-"plotfishai"
-    # return(pai)
+    class(pai)<-"plotfishai"
+    return(pai)
   }
 
 }
+
+
+
+
 
 
 
