@@ -53,7 +53,7 @@ plotfishai<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
     ggplot(data=fishdf, aes(x=Year, y=AbundIndex, group=1)) +
       geom_line()+
       geom_point()+
-      geom_ribbon(aes(ymin = AbundIndex-serr, ymax = AbundIndex+serr), alpha = 0.3)
+      geom_ribbon(aes(ymin = AbundIndex-serr, ymax = AbundIndex+serr), alpha = 0.3) +
     theme_bw()  +
       ylab("Abundance Index") +
       xlab("Year")
