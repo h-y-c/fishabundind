@@ -2,13 +2,10 @@
 % Please edit documentation in R/plot.fishai.r
 \name{plotfishai}
 \alias{plotfishai}
-\alias{plotfishai.default}
 \title{plotfishai function
 Plot annual abundance index#'}
 \usage{
-plotfishai(df, ...)
-
-\method{plotfishai}{default}(df, ..., Year = NULL, AbundIndex = NULL, se = TRUE)
+plotfishai(df, ..., Year = NULL, AbundIndex = NULL, se = TRUE)
 }
 \arguments{
 \item{df}{A dataset contains a variable of year and a variable of abundance indices.}
