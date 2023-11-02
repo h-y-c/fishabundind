@@ -9,11 +9,6 @@
 #' @import dplyr
 #' @import ggplot2
 #'
-#' @export
-plotfishai <- function(df, ...) {
-  UseMethod("plotfishai")
-}
-
 #' @param Year A variable of Year of data collection.
 #' @param AbundIndex A variable of annual abundance indices.
 #' @param se Logical. Standard error will be plotted out if TRUE.
@@ -50,7 +45,7 @@ plotfishai <- function(df, ...) {
 #'
 #' }
 #'
-plotfishai.default<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
+plotfishai<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
   if(!is.logical(se)){stop("se should be logical (TRUE or FALSE)",call.=FALSE)}
   if(se){
     fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)%>%
