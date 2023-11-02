@@ -8,7 +8,7 @@ Plot annual abundance index#'}
 \usage{
 plotfishai(df, ...)
 
-\method{plotfishai}{default}(df, ..., Year = NULL, AbundIndex = NULL)
+\method{plotfishai}{default}(df, ..., Year = NULL, AbundIndex = NULL, se = TRUE)
 }
 \arguments{
 \item{df}{A dataset contains a variable of year and a variable of abundance indices.}
@@ -18,6 +18,9 @@ plotfishai(df, ...)
 \item{Year}{A variable of Year of data collection.}
 
 \item{AbundIndex}{A variable of annual abundance indices.}
+
+\item{se}{Logical. Standard error will be plotted out if TRUE.
+the default is TRUE.}
 }
 \value{
 This function returns a graph of the abundance indices time series.

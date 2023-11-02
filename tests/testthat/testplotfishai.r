@@ -3,8 +3,8 @@
 context("Test plotfishai()")
 
 test_that("plotfishai() is performing correctly", {
-  
-  expect_silent( 
+
+  expect_silent(
     aiQ<-fishai(fishQ, Year="yr",
                 Week="wk",
                 RegionName="regname",
@@ -15,9 +15,9 @@ test_that("plotfishai() is performing correctly", {
                 N_individual="nind",
                 SeasonEst=TRUE,first_thr=0.05,durationEst=7)
   )
-  
+
   expect_silent(plotfishai(aiQ))
-  
+
   expect_warning(
       aiX<-fishai(fishX, Year="yr",
               Week="wk",

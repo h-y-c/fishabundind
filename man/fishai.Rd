@@ -60,8 +60,8 @@ For example, if the season is estimated to end 8 weeks after
 the estimated first week (see \code{first_thr}), then the input should be 8.}
 }
 \value{
-This function returns a dataframe which includes a variable of year and
-a variable of annual abundance indeices
+This function returns a dataframe which includes a variable of year,
+a variable of annual abundance indeices, and a variable of variance
 }
 \description{
 fishai function
