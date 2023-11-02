@@ -109,8 +109,7 @@ To visualize the time series of the initial time of the proposed season:
  plotinitseason(seasonQ)
 
 ```
-![image](https://github.com/h-y-c/fishabundind/assets/90223612/db046bac-2a5f-4523-b68d-53479db27e9e)
-
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/6406b02d-595c-44ec-8de6-e08d3abcf3cc)
 
 The estimates can be very useful for examining temporal changes in fish phenology.
 
