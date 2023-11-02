@@ -150,7 +150,7 @@ To visualize the time series of the annual abundance indices.
  plotfishai(aiQ)
 
 ```
-![image](https://github.com/h-y-c/fishabundind/assets/90223612/e7b447e9-fa06-4160-812b-e492e4a6c7b8)
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/6be146a9-3078-404f-86c0-8124afce4482)
 
 Another example of using `fishai` using all data (`SeasonEst=FALSE`) for species X.
 
@@ -174,12 +174,11 @@ To visualize the time series of the annual abundance indices for species X.
 
 ```{r message = FALSE}
 
- plotfishai(aiQ)
+ plotfishai(aiX)
 
 ```
 
-![image](https://github.com/h-y-c/fishabundind/assets/90223612/f9c710e5-c617-4bbd-8625-3e81ea902166)
-
+![image](https://github.com/h-y-c/fishabundind/assets/90223612/24da9438-35d3-48ad-8c91-3a5c95b9d589)
 
 # 3. Spatiotemporal Distribution
 
