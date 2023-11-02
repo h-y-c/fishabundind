@@ -57,7 +57,6 @@ plotfishai<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
     theme_bw()  +
       ylab("Abundance Index") +
       xlab("Year")
-    # class(pai)<-"plotfishai"
     return(pai)
   }else{
     fishdf<-df%>%dplyr::rename(Year=Year,AbundIndex=AbundIndex)
@@ -68,7 +67,6 @@ plotfishai<-function(df, ... ,Year=NULL,AbundIndex=NULL,se=TRUE){
       theme_bw()  +
       ylab("Abundance Index") +
       xlab("Year")
-    # class(pai)<-"plotfishai"
     return(pai)
   }
 

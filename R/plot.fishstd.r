@@ -10,17 +10,11 @@
 #' @import gplots
 #' @import colorRamps
 #'
-#' @export
-plotfishstd <- function(df, ...) {
-  UseMethod("plotfishstd")
-}
-
 #' @param legend.title Title for the color key.
 #' @param plot.title Title for the graph.
 #'
 #' @return This function returns a heatmap showing spatiotemporal distribution over regions and years.
 #'
-#' @rdname plotfishstd
 #' @export
 #'
 #' @examples
@@ -51,7 +45,7 @@ plotfishstd <- function(df, ...) {
 #'
 #' }
 #'
-plotfishstd.default<-function(df, ... ,legend.title=NULL,plot.title=NULL){
+plotfishstd<-function(df, ... ,legend.title=NULL,plot.title=NULL){
   pstd<-  heatmap.2(as.matrix(scale(df)), dendrogram='none',
                   Rowv=FALSE, Colv=FALSE, trace = "none",density.info="none",
                   keysize=1,
@@ -64,7 +58,6 @@ plotfishstd.default<-function(df, ... ,legend.title=NULL,plot.title=NULL){
                   lmat=rbind(c(5, 4, 2), c(6, 1, 3)),
                   lhei=c(1, 3.5), lwid=c(1, 10, 1),
                   col = matlab.like(30))
-  class(pstd)<-"plotfishstd"
   return(pstd)
 }
 

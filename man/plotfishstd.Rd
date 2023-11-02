@@ -2,13 +2,10 @@
 % Please edit documentation in R/plot.fishstd.r
 \name{plotfishstd}
 \alias{plotfishstd}
-\alias{plotfishstd.default}
 \title{plotfishstd function
 Plot spatiotemporal distribution for each region and each year}
 \usage{
-plotfishstd(df, ...)
-
-\method{plotfishstd}{default}(df, ..., legend.title = NULL, plot.title = NULL)
+plotfishstd(df, ..., legend.title = NULL, plot.title = NULL)
 }
 \arguments{
 \item{df}{A dataset contains density for each region and each year.

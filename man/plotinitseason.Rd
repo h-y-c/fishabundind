@@ -2,13 +2,10 @@
 % Please edit documentation in R/plot.initseason.r
 \name{plotinitseason}
 \alias{plotinitseason}
-\alias{plotinitseason.default}
 \title{plotinitseason function
 Plot initial weeks}
 \usage{
-plotinitseason(df, ...)
-
-\method{plotinitseason}{default}(df, ..., Year = NULL, first_wk = NULL)
+plotinitseason(df, ..., Year = NULL, first_wk = NULL)
 }
 \arguments{
 \item{df}{A dataset contains a variable of year and a variable of initial week.}

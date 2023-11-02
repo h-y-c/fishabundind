@@ -9,17 +9,11 @@
 #' @import dplyr
 #' @import ggplot2
 #'
-#' @export
-plotinitseason <- function(df, ...) {
-  UseMethod("plotinitseason")
-}
-
 #' @param Year A variable of Year of data collection.
 #' @param first_wk A variable of estimated first week of the season.
 #'
 #' @return This function returns a graph of the initial week time series.
 #'
-#' @rdname plotinitseason
 #' @export
 #'
 #' @examples
@@ -38,7 +32,7 @@ plotinitseason <- function(df, ...) {
 #'
 #'  }
 
-plotinitseason.default<-function(df, ... ,Year=NULL,first_wk=NULL){
+plotinitseason<-function(df, ... ,Year=NULL,first_wk=NULL){
   fishinitseasondf<-df%>%dplyr::rename(Year=Year,first_wk=first_wk)
   pinit<-ggplot(data=fishinitseasondf, aes(x=Year, y=first_wk, group=1)) +
     geom_line()+
@@ -46,7 +40,6 @@ plotinitseason.default<-function(df, ... ,Year=NULL,first_wk=NULL){
     theme_bw()  +
     ylab("Initial Week") +
     xlab("Year")
-  class(pinit)<-"plotinitseason"
   return(pinit)
 }
 
