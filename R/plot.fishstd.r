@@ -46,7 +46,8 @@
 #' }
 #'
 plotfishstd<-function(df, ... ,legend.title=NULL,plot.title=NULL){
-  pstd<-  heatmap.2(as.matrix(scale(df)), dendrogram='none',
+  # pstd<-
+    heatmap.2(as.matrix(scale(df)), dendrogram='none',
                   Rowv=FALSE, Colv=FALSE, trace = "none",density.info="none",
                   keysize=1,
                   key = TRUE,
@@ -58,7 +59,7 @@ plotfishstd<-function(df, ... ,legend.title=NULL,plot.title=NULL){
                   lmat=rbind(c(5, 4, 2), c(6, 1, 3)),
                   lhei=c(1, 3.5), lwid=c(1, 10, 1),
                   col = matlab.like(30))
-  return(pstd)
+  # return(pstd)
 }
 
 
