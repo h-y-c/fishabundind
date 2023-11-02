@@ -1,0 +1,12 @@
+fishQ                   Hypothetical fish survey data for species Q
+fishX                   Hypothetical fish survey data for species X
+fishai                  fishai function Estimate annual abundance index
+fishinitseasonEst       fishinitseasonEst function Initial week of the
+                        proposed season
+fishstd                 fishstd function Averaged weekly density for
+                        each region and each year
+plotfishai              plotfishai function Plot annual abundance
+                        index#'
+plotfishstd             plotfishstd function Plot spatiotemporal
+                        distribution for each region and each year
+plotinitseason          plotinitseason function Plot initial weeks

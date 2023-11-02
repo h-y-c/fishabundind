@@ -30,8 +30,8 @@
 #'
 #' @import dplyr
 #'
-#' @return This function returns a dataframe which includes a variable of year and
-#'  a variable of annual abundance indeices
+#' @return This function returns a dataframe which includes a variable of year,
+#'  a variable of annual abundance indeices, and a variable of variance
 #'
 #' @details The data are assumed collected from a fishery-independent survey following
 #'  a stratified random sampling design with i regions within the sampling area and
@@ -70,6 +70,7 @@
 #'
 #' }
 #'
+
 
 fishai<-function(dataset,
                  Year,Week,RegionName,Strata,
@@ -181,6 +182,41 @@ fishai<-function(dataset,
   suppressWarnings(
     suppressMessages(
 
+      var_df<-foo_wks%>%
+        group_by(Year,
+                 RegionName,
+                 Week,
+                 Strata)%>%
+        summarise(mean_ls=mean(N_individual,na.rm=TRUE),
+                  n_obs=n(),
+                  wk_volume=sum(VolumeSample,na.rm=TRUE)
+        )%>%dplyr::filter(wk_volume>0)%>%
+        right_join(foo_wks)%>%
+        group_by(Year,
+                 RegionName,
+                 Week,
+                 Strata)%>%
+        summarise(
+          sse=((n_obs*sum(((N_individual-mean_ls)^2)/(n_obs-1),na.rm=TRUE))/(wk_volume)^2),
+          StrataVolume=StrataVolume,
+          RegionVolume=RegionVolume
+        )%>%unique()%>%
+        group_by(Year,
+                 Week) %>%
+        summarise(
+          temp=sum(((StrataVolume^2)*sse)/(sum(unique(RegionVolume),na.rm=TRUE)^2),na.rm=TRUE)
+        )%>%group_by(Year)%>%
+        summarise(var=sum(temp,na.rm=TRUE))%>%
+        arrange(Year)%>%ungroup()%>%as.data.frame()
+
+    )# suppressMessages
+  )#suppressWarnings
+
+
+
+  suppressWarnings(
+    suppressMessages(
+
       yr_abund_df<-foo_wks%>%
         group_by(Year,
                  RegionName,
@@ -199,7 +235,8 @@ fishai<-function(dataset,
         summarise(
           AbundIndex=sum((ls_den*StrataVolume)/mean(unique(VolSum),na.rm=TRUE),na.rm=TRUE)
         )%>%
-        arrange(Year)%>%ungroup()%>%as.data.frame()
+        arrange(Year)%>%ungroup()%>%as.data.frame()%>%
+        full_join(var_df)
 
     )# suppressMessages
   )#suppressWarnings
@@ -207,4 +244,6 @@ fishai<-function(dataset,
   return(yr_abund_df)
 
 }# end of funnction
+
+
 
