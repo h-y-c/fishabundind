@@ -4,7 +4,7 @@ fishabundind: Fish Abundance Index
 ================
 Hsiao-Yun Chang, Yong Chen
 
-2023-11-06
+2024-01-05
 
 
 # Introduction
@@ -183,7 +183,7 @@ Use `se=FALSE` to turn off the standard error (default is TRUE).
 ![image](https://github.com/h-y-c/fishabundind/assets/90223612/63bd7df0-33a7-4846-9446-5c7fdca8cc25)
 
 
-# 3. Spatiotemporal Distribution
+# 4. Spatiotemporal Distribution
 
 Use `fishstd` function to estimate the average weekly density over the survey area and years.
 Note that when `SeasonEst=TRUE`, inputs of `first_thr` and `durationEst` are necessary.
